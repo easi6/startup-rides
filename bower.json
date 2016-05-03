@@ -1,0 +1,24 @@
+{
+  "name": "easiway-rise-conf",
+  "version": "0.0.0",
+  "authors": [
+    "Jaehwa Han <drh@easi6.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "easi6, Inc.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}
+
