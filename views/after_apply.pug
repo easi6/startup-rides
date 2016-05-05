@@ -1,0 +1,19 @@
+extends ./layout.pug
+block content
+  .banner.apply
+    h1.title-img Apply now
+
+  #thankyou
+    h3.apply Sucessfully Applied!
+    p
+      | Thank you for your interests and
+      br
+      | hope we can meet in Hong Kong.
+
+  //footer include
+  - var bgcolor = "#e8d807";
+  include ./footer.pug
+block script
+  script(src="/js/jquery.nicefileinput.min.js")
+
+
