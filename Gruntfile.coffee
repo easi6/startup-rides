@@ -4,8 +4,33 @@ mountFolder = (connect, dir) ->
 
 module.exports = (grunt) ->
   require('load-grunt-tasks')(grunt)
+  grunt.loadNpmTasks('grunt-processhtml')
   require('time-grunt')(grunt)
   grunt.initConfig
+    htmlmin:
+      dist:
+        options:
+          removeComments: true
+          collapseWhitespace: true
+        files: [
+          expand: true
+          cwd: "<%= process.env.BASE %>"
+          src: ['**/*.html']
+          dest: '<%= process.env.BASE %>'
+          ext: ".html"
+        ]
+
+    processhtml:
+      dist:
+        options:
+          process: true
+        files: [
+          expand: true
+          cwd: "<%= process.env.BASE %>"
+          src: ['**/*.html']
+          dest: '<%= process.env.BASE %>'
+          ext: ".html"
+        ]
     app:
       paths:
         dist: 'dist'
@@ -21,6 +46,7 @@ module.exports = (grunt) ->
         port: 8080
         livereload: 35729
         hostname: '0.0.0.0'
+        base: '<%= process.env.BASE %>'
       livereload:
         options:
           open: true
@@ -89,18 +115,20 @@ module.exports = (grunt) ->
     cssmin:
       dist:
         files: {
-          "dist/css/main.css": ["<%= app.paths.tmp%>/css/*.css"]
+          "<%= process.env.BASE %>/css/dist.min.css": ["<%= process.env.BASE %>/css/*.css"]
         }
 
     uglify:
       dist:
         files:
-          'dist/js/main.min.js': ['dist/js/main.js']
+          "<%= process.env.BASE %>/js/dist.min.js": ['<%= process.env.BASE%>/js/main.js']
     open:
       # change to the port you're using
       server:
         path: "http://localhost:<%= connect.options.port %>?LR-verbose=true"
     pug:
+      options:
+        pretty: true
       compile:
         files: [
           expand: true
@@ -139,6 +167,13 @@ module.exports = (grunt) ->
             cwd: 'assets/scripts'
             dest: '<%= process.env.BASE %>/js/'
         ]
+      html:
+        files: [
+            expand: true
+            src: ['**/*.html']
+            cwd: 'views/'
+            dest: '<%= process.env.BASE %>/'
+        ]
       bower:
         files: [
           expand: true
@@ -149,4 +184,4 @@ module.exports = (grunt) ->
     clean: ['dist', '.tmp']
 
   grunt.registerTask 'server', [ 'clean', 'env:dev', 'copy', 'pug', 'less', 'connect:livereload', 'open', 'watch' ]
-  grunt.registerTask 'build', [ 'clean', 'copy', 'pug', 'less', 'cssmin:dist', 'uglify']
+  grunt.registerTask 'build', [ 'clean', 'env:dist', 'copy', 'pug', 'less', 'cssmin:dist', 'uglify', 'processhtml:dist', 'htmlmin:dist']

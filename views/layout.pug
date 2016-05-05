@@ -5,11 +5,14 @@ html(lang="en")
     meta(name="renderer" content="webkit")
     title Startup Rides
     link(href='https://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css')
-    <!-- build:css:dist /css/main.min.css -->
+    // build:css:dist /bootstrap/css/bootstrap.min.css
     link(rel="stylesheet" href="/bootstrap/css/bootstrap.css")
+    // /build
+
+    // build:css:dist /css/dist.min.css
     link(rel="stylesheet" href="/css/main.css")
     link(rel="stylesheet" href="/css/apply.css")
-    <!-- /build -->
+    // /build
     block header
   body
     .container
@@ -17,3 +20,6 @@ html(lang="en")
     script(src="/bower/jquery/dist/jquery.min.js")
     script(src="/bootstrap/js/bootstrap.min.js")
     block script
+    // build:js:dist /js/dist.min.js
+    script(src="/js/main.js")
+    // /build

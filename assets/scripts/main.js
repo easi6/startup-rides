@@ -1,3 +1,3 @@
 $(function() {
-  console.log("loaded");
+  $("input[type=file]").nicefileinput({label: "+ Add Pitch file"});
 });
