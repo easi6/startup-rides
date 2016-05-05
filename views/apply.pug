@@ -2,48 +2,56 @@ extends ./layout.pug
 block content
   .banner.apply
     h1.title-img Apply now
-  div
-    form(action="" method="POST")
+  div(style="margin-top: 80px;")
+    form(action="http://submit.easi-way.com/submit/rides" method="POST" enctype="multipart/form-data")
+      p.evt-desc
+        | Startup Rides is an event for startups and investors. In order to make a best match ride, we need to understand what you have been doing. Please share about your team and work.
       h3.apply About Service
       .form-group
         label Service Name
-        input.form-control(type="text" required)
+          span.required *
+        input.form-control(type="text" name="service[name]" required)
       .form-group
         label Service URL
-        input.form-control(type="url" required)
+          span.required *
+        input.form-control(type="url" name="service[url]" required)
       h3.apply About Company
       .form-group
         label Company Name
-        input.form-control(type="text" required)
+          span.required *
+        input.form-control(type="text" name="company[name]" required)
       .form-group
         label Founded at
-        input.form-control(type="text" required)
+          span.required *
+        input.form-control(type="text" name="company[founded]" required)
       .form-group
         label Current Funding Status
-        select.form-control
-          option(value="0-100k") a.0-100k
-          option(value="100k-500k") b.100k-500k
-          option(value="500k-1mil") c.500k-1mil
-          option(value="1mil-3mil") d.1mil-3mil
-          option(value="3mil+") e.3mil+
-      h3.apply Brief Explanation of service & team
+        select.form-control(name="company[funding]")
+          option(disabled selected value="") --- Please Select ---
+          option(value="0-100k") a. 0-100k
+          option(value="100k-500k") b. 100k-500k
+          option(value="500k-1mil") c. 500k-1mil
+          option(value="1mil-3mil") d. 1mil-3mil
+          option(value="3mil+") e. 3mil+
+      h3.apply Brief Explanation of Service & Team
       label 500 words max in English
-      textarea.form-control
+      textarea.form-control(name="explain[text]")
       label Under 3M bytes
-      input.upload-file(type="file" required)
+        span.required *
+      input.upload-file(name="pitch_deck" type="file" required)
 
       h3.apply Contact Point
       .form-group
         label Name
-        input.form-control(type="text" required)
+          span.required *
+        input.form-control(type="text" name="contact[name]" required)
       .form-group
         label Email
-        input.form-control(type="email" required)
+          span.required *
+        input.form-control(type="email" name="contact[email]" required)
 
       p.evt-desc
-        | After submission, you can make another submission for changes.
-        br
-        | We will contact you soon after review.
+        | Ready to submit? Please double check your contact information. We will send you a result to the email that you provided. Thank you.
 
 
       button.btn-apply.btn-submit(type="submit" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Submit
