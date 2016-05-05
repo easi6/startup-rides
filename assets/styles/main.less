@@ -9,6 +9,10 @@
   .navbar-header {
     margin:0px;
   }
+
+  .panel-info dd {
+    margin-left: 0 !important;
+  }
 }
 
 body {
@@ -26,6 +30,7 @@ body {
   background-position: left top;
   background-size: contain;
   .size(@w; @h);
+  max-width: 100%;
   text-transform: uppercase;
 }
 .banner {
@@ -89,6 +94,7 @@ body {
   max-width: 684px;
   font-size: 22px;
   text-align: center;
+  padding: 10px;
 }
 
 h3 { /* need to be removed using customized bootstrap */
@@ -179,7 +185,8 @@ footer {
   }
 
   ul {
-    margin: 0 75px;
+    margin: 0 auto;
+    max-width: 520px;
     li {
       &:before {
         margin-top: 6px;
@@ -190,6 +197,7 @@ footer {
         .img-retina("/img/icn-mark-small.png"; "/img/icn-mark-small@2x.png"; 14px; 22px);
         .size(14px;22px;);
       }
+      margin-left: 30px;
       margin-bottom: 30px;
     }
   }
@@ -218,14 +226,10 @@ footer {
   margin-bottom: 40px;
   position: relative;
   .bg-hk {
-    .img-retina("/img/img-hongkong.png"; "/img/img-hongkong@2x.png"; 684px; 279px);
-    background-size: contain;
-    min-height: 279px;
     .size(100%; auto);
     position: absolute;
     left: 0; right: 0; top: 0;
   }
-  min-height: 279px;
 }
 
 .gray-overlay {
@@ -294,4 +298,8 @@ footer {
   margin-bottom: 100px;
   .center-block();
   max-width: 684px; 
+
+  .col-md-6 {
+    margin-bottom: 30px;
+  }
 }
