@@ -35,6 +35,12 @@ module.exports = (grunt) ->
         tasks: 'less'
         options:
           livereload: false
+      bootstrap:
+        files:
+          ['assets/bootstrap/**/*']
+        tasks: 'copy:bootstrap'
+        options:
+          livereload: false
       css:
         files:
           ['assets/styles/**/*.css']
@@ -104,6 +110,14 @@ module.exports = (grunt) ->
           dest: "<%= process.env.BASE %>"
         ]
     copy:
+      bootstrap:
+        files: [
+          expand: true
+          src: ['**/*']
+          cwd: 'assets/bootstrap'
+          dest: '<%= process.env.BASE %>/bootstrap/'
+        ]
+
       img:
         files: [
             expand: true

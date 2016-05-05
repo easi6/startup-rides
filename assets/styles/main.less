@@ -1,5 +1,7 @@
 @import (reference) "../bower_components/bootstrap/less/mixins.less";
 
+@lightgreen: #32d73b;
+
 @media (max-width: 767px) {
   .container, .row {
     padding:0px;
@@ -49,6 +51,11 @@ body {
   ul.nav li {
     text-transform: uppercase;
   }
+  border: none;
+
+  a:hover, a:focus {
+    color: #057528;
+  }
 }
 
 .halo {
@@ -64,6 +71,7 @@ body {
     text-align: center;
     font-size: 50px;
     font-weight: 300;
+    color: @lightgreen;
   }
 }
 
@@ -75,8 +83,10 @@ body {
 
 h3 { /* need to be removed using customized bootstrap */
   font-size: 30px;
-  color: #32d73b;
+  color: @lightgreen;
   text-align: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 
 a.host-logo {
@@ -114,4 +124,96 @@ footer {
     font-size: 16px;
     font-weight: 300;
   }
+}
+
+@panel-gap: 60px;
+.panel-info {
+  .desc {
+    font-size: @text-size;
+  }
+  .desc-sub {
+    font-size: @text-size - 2px;
+    color: #8e8e8e;
+  }
+
+  .center-block();
+  max-width: 684px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  position: relative;
+  @text-size: 22px;
+  .panel-body {
+    background-color: #f8f8f8;
+    font-size: @text-size;
+  }
+  .panel-heading {
+    text-align: center;
+    .phase {
+      font-size: @text-size;
+    }
+    .date {
+      font-size: 40px;
+      font-weight: 300;
+    }
+  }
+  margin-bottom: @panel-gap;
+
+  dt {
+    font-weight: 400;
+    font-size: 22px;
+    width: 180px;
+  }
+  dd {
+    margin-left: 200px;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    margin: 0 75px;
+    li {
+      &:before {
+        margin-top: 6px;
+        position: absolute;
+        content: '';
+        margin-left: -29px;
+        display: inline-block;
+        .img-retina("/img/icn-mark-small.png"; "/img/icn-mark-small@2x.png"; 14px; 22px);
+        .size(14px;22px;);
+      }
+      margin-bottom: 30px;
+    }
+  }
+
+  .easiway-app-icon {
+    .img-retina("/img/icn-easiway-app.png"; "/img/icn-easiway-app@2x.png"; 142px; 143px);
+    .size(142px; 143px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    .center-block();
+    margin-bottom: 35px;
+    margin-top: 35px;
+  }
+}
+.panel-info+.panel-info:before {
+  content:"";
+  position: absolute;
+  top: -@panel-gap - 2px;
+  bottom: 100%;
+  left: 50%;
+  border-left: 1px solid #1ed977;
+}
+
+.bg-wrapper {
+  margin: -15px;
+  margin-bottom: 40px;
+  position: relative;
+  .bg-hk {
+    .img-retina("/img/img-hongkong.png"; "/img/img-hongkong@2x.png"; 684px; 279px);
+    background-size: contain;
+    min-height: 279px;
+    .size(100%; auto);
+    position: absolute;
+    left: 0; right: 0; top: 0;
+  }
+  min-height: 279px;
 }
