@@ -45,6 +45,15 @@ body {
 
 .btn-apply {
   text-transform: uppercase;
+  margin-top: 26px;
+  &.btn-block {
+    @h: 123px;
+    height: @h;
+    font-size: 40px;
+    line-height: @h - 12px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
 }
 
 #main-nav {
@@ -77,8 +86,9 @@ body {
 
 .evt-desc {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 684px;
   font-size: 22px;
+  text-align: center;
 }
 
 h3 { /* need to be removed using customized bootstrap */
@@ -216,4 +226,72 @@ footer {
     left: 0; right: 0; top: 0;
   }
   min-height: 279px;
+}
+
+.gray-overlay {
+  background-color: rgba(74, 73, 74, 0.9);
+  height: 340px;
+  width: 100%;
+}
+
+#vc-wrapper {
+  margin-top: 35px;
+  max-width: 684px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.gray-overlay {
+  width: 100%;
+  background-color: rgba(74, 73, 74, 0.9);
+  position: absolute;
+  z-index: 100;
+  display: table;
+  p {
+    color: rgba(255,255,255,0.9);
+    font-size: 22px;
+    font-weight: 300;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+#vc-list {
+  .vc-item {
+    .vc-name {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+    .vc-title {
+      text-align: center;
+      color: #858585;
+      font-size: 18px;
+    }
+    .photo-ph {
+      position: relative;
+      background-color: #d8d8d8;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      .square(68px);
+
+      &:before {
+        top: 23px;
+        left: -40px;
+        position: absolute;
+        content: '';
+        display: inline-block;
+        .img-retina("/img/icn-mark-big.png"; "/img/icn-mark-big@2x.png"; 28px; 45px);
+        .size(28px;45px);
+      }
+
+    }
+  }
+}
+
+.hosts {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  .center-block();
+  max-width: 684px; 
 }
