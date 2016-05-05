@@ -1,0 +1,117 @@
+@import (reference) "../bower_components/bootstrap/less/mixins.less";
+
+@media (max-width: 767px) {
+  .container, .row {
+    padding:0px;
+  }
+  .navbar-header {
+    margin:0px;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+}
+
+.title-img(@w;@h) {
+  margin: 0;
+  padding: 0;
+  color: white;
+  .hide-text();
+  background: url(/img/img-title.svg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  .size(@w; @h);
+  text-transform: uppercase;
+}
+.banner {
+  background: url(/img/img-head-home.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .size(100%; 371px);
+  padding: 72px 38px 65px 38px;
+
+  .title-img {
+    .title-img(374px; 142px);
+    .size(374px; 142px);
+  }
+
+}
+
+.btn-apply {
+  text-transform: uppercase;
+}
+
+#main-nav {
+  ul.nav li {
+    text-transform: uppercase;
+  }
+}
+
+.halo {
+  background-image: url(/img/img-tesla.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 560px 433px;
+  min-height: 433px;
+
+  margin: 75px auto 45px auto;
+
+  h2.halo-title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+  }
+}
+
+.evt-desc {
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 22px;
+}
+
+h3 { /* need to be removed using customized bootstrap */
+  font-size: 30px;
+  color: #32d73b;
+  text-align: center;
+}
+
+a.host-logo {
+  display: block;
+  margin: 0 auto;
+  &.easiway {
+    .img-retina("/img/easiway-logo.png";"/img/easiway-logo@2x.png";213px;52px);
+    background-repeat: no-repeat;
+    .size(213px; 52px);
+  }
+  &.softlayer {
+    .img-retina("/img/softlayer-logo.png";"/img/softlayer-logo.png";213px;36px);
+    background-repeat: no-repeat;
+    .size(213px; 36px);
+  }
+  .hide-text();
+}
+
+
+footer {
+  padding: 53px 62px;
+  .title-img {
+    .title-img(242px; 93px);
+    .size(242px; 93px);
+    margin-right: 77px;
+  }
+
+  .contact-link {
+    margin-top: 50px;
+    padding-top: 7px;
+    border-top: 7px solid white;
+    color: white;
+    text-decoration: none;
+    margin-right: 45px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+}

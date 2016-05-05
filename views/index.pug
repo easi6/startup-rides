@@ -1,0 +1,102 @@
+extends ./layout.pug
+block content
+  .banner
+    h1.title-img STARTUP RIDES
+    a.btn-apply(href="/apply").btn.btn-default Apply Now
+  div
+    nav#main-nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          ul.nav.nav-justified
+            li.active
+              a(href="#") Event Schedule
+            li
+              a(href="#") Venture Capitals
+            li
+              a(href="#") Apply
+            li
+              a(href="#") Hosts
+
+
+    .halo
+      h2.halo-title Speed dating with VC in Tesla
+    p.evt-desc Startup Rides is hosted by Easiway and IBM softlayer. And it is supported by Rise conference. This event is specially designed to help startups for a private meeting with investors. But we do not want you to be at a cold VC office. For a more intimate relationship, we have prepared Tesla rides with investors. If you want to enjoy  a Hong Kong city ride with investor, please submit your application right now!
+
+    h3 Event Schedule
+    .panel.panel-default
+      .panel-heading
+        | Application
+        br
+        | May 10 Tue - 25 Wed
+
+    .panel.panel-default
+      .panel-heading
+        | Selection
+        br
+        | May 27 Fri
+
+    .panel.panel-default
+      .panel-heading
+        | Book a ride
+        br
+        | May 30 Mon
+      .panel-body
+        ul
+          li Download ‘Easiway’ app
+          li
+            | Make a resevation with given information
+            br
+            | Pick up location and time will be provied via email
+          li
+            | Finish booking with special promotion code
+            br
+            No need to pay / Only selected team will get the code
+    .panel.panel-default
+      .panel-heading
+        | Meeting with VCs
+        br
+        | June 1 Wed 6:00-8:00 PM
+      .panel-body
+        dl.dl-horizontal
+          dt Pick up point A »
+          dd
+            | Convention & Exhibition Center
+            br
+            | 1 Expo Dr, Wan Chai, Hong Kong
+          dt Pick up point B »
+          dd
+            | IFC Mall
+            br
+            | 8 Finance Street, Central, Hong Kong
+          dt Meeting time »
+          dd 20-30minutes Easiway rides with VCs
+
+    h3 Venture Capitals
+    p TBD
+
+    h3 Qualification
+    p There is no certain conditions to be selected. You only need to be a startup with passion. Look forward to meeting you all.
+
+    a.btn-apply(href="/apply").btn.btn-block.btn-default Apply Now
+
+    h3 Hosts
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Nunc consectetur vel enim id gravida. 
+
+    // hosts logo part
+    .row
+      .col-md-6.col-sm-6
+        a.host-logo.easiway(href="http://geteasiway.com" target="_blank") easiway
+      .col-md-6.col-sm-6
+        a.host-logo.softlayer(href="#") Softlayer
+
+    //footer include
+  - var bgcolor = "#1ed977";
+  include ./footer.pug

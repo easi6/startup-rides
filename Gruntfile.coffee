@@ -3,24 +3,35 @@ mountFolder = (connect, dir) ->
   connect.static require('path').resolve dir
 
 module.exports = (grunt) ->
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
+  require('load-grunt-tasks')(grunt)
+  require('time-grunt')(grunt)
   grunt.initConfig
+    app:
+      paths:
+        dist: 'dist'
+        tmp: '.tmp'
+    env:
+      dev:
+        BASE: ".tmp"
+      dist:
+        BASE: "dist"
     pkg: grunt.file.readJSON 'package.json'
     connect:
-      server:
+      options:
+        port: 8080
+        livereload: 35729
+        hostname: '0.0.0.0'
+      livereload:
         options:
-          port: 9999
-          hostname: '*'
-          base: 'dist'
-          middleware: (connect) ->
-            [ require('connect-livereload')(ignore:[]), mountFolder(connect, '.tmp'), mountFolder(connect, 'dist')]
+          open: true
+          base: '<%= process.env.BASE%>'
+
     watch:
       options:
         livereload: true
         event: ['changed', 'added', 'deleted']
       less:
-        files:
-          ['assets/styles/**/*.less']
+        files: ['assets/styles/**/*.less']
         tasks: 'less'
         options:
           livereload: false
@@ -54,16 +65,27 @@ module.exports = (grunt) ->
         tasks: 'copy:bower'
         options:
           livereload: false
-    less:
-      development:
+      reload:
+        files: ['<%= process.env.BASE %>/**/*']
         options:
-          paths: ["assets/styles"]
-        files:
-          'dist/css/main.css': 'assets/styles/main.less'
+          livereload: true
+    less:
+      options:
+        paths: ["assets/styles"]
+      compile:
+        files: [
+          expand: true
+          cwd: "assets/styles"
+          src: ['**/*.less']
+          dest: '<%= process.env.BASE %>/css'
+          ext: ".css"
+        ]
     cssmin:
       dist:
-        files:
-          'dist/css/ver2.min.css': 'dist/css/ver2.css'
+        files: {
+          "dist/css/main.css": ["<%= app.paths.tmp%>/css/*.css"]
+        }
+
     uglify:
       dist:
         files:
@@ -71,42 +93,46 @@ module.exports = (grunt) ->
     open:
       # change to the port you're using
       server:
-        path: "http://localhost:<%= connect.server.options.port %>?LR-verbose=true"
+        path: "http://localhost:<%= connect.options.port %>?LR-verbose=true"
     pug:
       compile:
-        files:
-          "dist/index.html": ["views/index.pug"],
-          "dist/apply.html": ["views/apply.pug"]
+        files: [
+          expand: true
+          cwd: "views"
+          src: ["*.pug"]
+          ext: ".html"
+          dest: "<%= process.env.BASE %>"
+        ]
     copy:
       img:
         files: [
             expand: true
-            src: ['**']
+            src: ['**/*']
             cwd: 'assets/images'
-            dest: 'dist/img/'
+            dest: '<%= process.env.BASE %>/img/'
         ]
       styles:
         files: [
             expand: true
             src: ['**.css']
             cwd: 'assets/styles'
-            dest: 'dist/css/'
+            dest: '<%= process.env.BASE %>/css/'
         ]
       scripts:
         files: [
             expand: true
             src: ['**.{js,json}']
             cwd: 'assets/scripts'
-            dest: 'dist/js/'
+            dest: '<%= process.env.BASE %>/js/'
         ]
       bower:
         files: [
           expand: true
           src: ['**']
           cwd: 'assets/bower_components'
-          dest: 'dist/bower/'
+          dest: '<%= process.env.BASE %>/bower/'
         ]
-    clean: ['dist']
+    clean: ['dist', '.tmp']
 
-  grunt.registerTask 'server', [ 'clean', 'copy', 'pug', 'less', 'cssmin', 'uglify', 'connect:server', 'open', 'watch' ]
-  grunt.registerTask 'build', [ 'clean', 'copy', 'pug', 'less', 'cssmin', 'uglify']
+  grunt.registerTask 'server', [ 'clean', 'env:dev', 'copy', 'pug', 'less', 'connect:livereload', 'open', 'watch' ]
+  grunt.registerTask 'build', [ 'clean', 'copy', 'pug', 'less', 'cssmin:dist', 'uglify']
