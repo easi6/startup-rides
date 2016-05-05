@@ -1,0 +1,63 @@
+@import (reference) "../bower_components/bootstrap/less/mixins.less";
+label {
+  font-weight: 400;
+  font-size: 16px;
+}
+form {
+  max-width: 704px;
+  padding: 10px;
+  .center-block();
+}
+
+.form-control {
+  font-size: 20px;
+  height: 60px;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+
+textarea.form-control {
+  min-height: 250px;
+  margin-bottom: 20px;
+}
+
+@yellow:#e8d807;
+
+.upload-file {
+  display: block !important;
+  .NFI-button {
+    color: white;
+    float: right !important;
+    background-color: @yellow;
+    padding: 14px 33px;
+    border-radius: 3px;
+    font-size: 26px;
+    height: 60px;
+    width: 249px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    &:active, &:hover, &:focus {
+      background-color: #b8ac1b;
+    }
+  }
+
+  .NFI-filename {
+    float: right !important;
+    width: 100%;
+    max-width: 684px - 249px - 10px;
+    border: 1px solid #9b9b9b;
+    border-radius: 3px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+.btn-apply {
+  &.btn-submit {
+    background-color: #e8d807; border-color: #e8d807;
+    &:active, &:hover, &:focus {
+      background-color: #b8ac1b;
+    }
+  }
+}

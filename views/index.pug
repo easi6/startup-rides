@@ -2,7 +2,7 @@ extends ./layout.pug
 block content
   .banner
     h1.title-img STARTUP RIDES
-    a.btn-apply(href="/apply").btn.btn-primary.btn-lg Apply Now
+    a.btn-apply(href="/apply.html").btn.btn-primary.btn-lg Apply Now
   div
     nav#main-nav.navbar.navbar-default
       .container-fluid
@@ -18,7 +18,7 @@ block content
             li.active
               a(href="#schedules") Event Schedule
             li
-              a(href="/apply" target="_blank") Apply
+              a(href="/apply.html" target="_blank") Apply
             li
               a(href="#hosts") Hosts
 
@@ -52,6 +52,10 @@ block content
           li
             .desc Finish booking with special promotion code
             .desc-sub No need to pay / Only selected team will get the code
+
+          .download-links.clearfix
+            a(href="https://itunes.apple.com/en/app/easiway/id993087185?mt=8" target="_blank").btn.btn-lg.btn-default.btn-download App Store
+            a(href="https://play.google.com/store/apps/details?id=com.easi6.easiway.android" target="_blank").btn.btn-lg.btn-default.btn-download Google Play
     .panel.panel-info
       .panel-heading
         .phase Meeting with VCs
@@ -105,7 +109,7 @@ block content
     h3 Qualification
     p.evt-desc There is no certain conditions to be selected. You only need to be a startup with passion. Look forward to meeting you all.
 
-    a.btn-apply(href="/apply" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Apply Now
+    a.btn-apply(href="/apply.html" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Apply Now
 
     h3#hosts Hosts
     p.evt-desc Startup Rides is proudly hosted by Easiway and IBM Softlayer.
@@ -117,6 +121,6 @@ block content
       .col-md-6.col-sm-6.col-xs-12
         a.host-logo.softlayer(href="#") Softlayer
 
-    //footer include
+  //footer include
   - var bgcolor = "#1ed977";
   include ./footer.pug

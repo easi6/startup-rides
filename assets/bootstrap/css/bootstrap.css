@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=4a5d3ff826b66ad8b6a4aa240181a99d)
- * Config saved to config.json and https://gist.github.com/4a5d3ff826b66ad8b6a4aa240181a99d
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=3bb45124647c85031f4aaacc98f777ca)
+ * Config saved to config.json and https://gist.github.com/3bb45124647c85031f4aaacc98f777ca
  */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -2552,7 +2552,7 @@ output {
   padding-top: 7px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #aaaaaa;
+  color: #555555;
 }
 .form-control {
   display: block;
@@ -2561,10 +2561,10 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #aaaaaa;
+  color: #555555;
   background-color: #ffffff;
   background-image: none;
-  border: 1px solid #cccccc;
+  border: 1px solid #9b9b9b;
   border-radius: 3px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -3909,10 +3909,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: #aaaaaa;
+  color: #555555;
   text-align: center;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
+  border: 1px solid #9b9b9b;
   border-radius: 3px;
 }
 .input-group-addon.input-sm {
@@ -5505,22 +5505,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #d6e9c6;
 }
 .panel-info {
-  border-color: transparent;
+  border-color: #009933;
 }
 .panel-info > .panel-heading {
   color: #ffffff;
   background-color: #009933;
-  border-color: transparent;
+  border-color: #009933;
 }
 .panel-info > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: transparent;
+  border-top-color: #009933;
 }
 .panel-info > .panel-heading .badge {
   color: #009933;
   background-color: #ffffff;
 }
 .panel-info > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: transparent;
+  border-bottom-color: #009933;
 }
 .panel-warning {
   border-color: #faebcc;

@@ -20,12 +20,12 @@ body {
   color: #555;
 }
 
-.title-img(@w;@h) {
+.title-img(@w;@h;@imgname:"img-title.svg") {
   margin: 0;
   padding: 0;
   color: white;
   .hide-text();
-  background: url(/img/img-title.svg);
+  background: url("/img/@{imgname}");
   background-repeat: no-repeat;
   background-position: left top;
   background-size: contain;
@@ -34,7 +34,13 @@ body {
   text-transform: uppercase;
 }
 .banner {
-  background: url(/img/img-head-home.svg);
+  background-image: url(/img/img-head-home.svg);
+  &.apply {
+    background-image: url(/img/img-head-apply.svg);
+    .title-img {
+      .title-img(374px; 142px; "img-apply-now.svg");
+    }
+  }
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -100,6 +106,9 @@ body {
 h3 { /* need to be removed using customized bootstrap */
   font-size: 30px;
   color: @lightgreen;
+  &.apply {
+    color: #b8ac1b;
+  }
   text-align: center;
   margin-top: 80px;
   margin-bottom: 30px;
@@ -302,4 +311,33 @@ footer {
   .col-md-6 {
     margin-bottom: 30px;
   }
+}
+
+.download-links {
+  margin: 10px auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.btn-download {
+  background-color: transparent;
+  margin: 0 12px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #009933;
+  border: 1px solid #009933;
+  min-width: 149px;
+
+  &:hover, &:active, &:focus, &:active:focus, &:active:hover {
+    color: white;
+    background-color: #009933;
+  }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar-default .navbar-toggle {
+  border-color: white;
 }

@@ -1,1 +1,60 @@
-p apply
+extends ./layout.pug
+block content
+  .banner.apply
+    h1.title-img Apply now
+  div
+    form(action="" method="POST")
+      h3.apply About Service
+      .form-group
+        label Service Name
+        input.form-control(type="text" required)
+      .form-group
+        label Service URL
+        input.form-control(type="url" required)
+      h3.apply About Company
+      .form-group
+        label Company Name
+        input.form-control(type="text" required)
+      .form-group
+        label Founded at
+        input.form-control(type="text" required)
+      .form-group
+        label Current Funding Status
+        select.form-control
+          option(value="0-100k") a.0-100k
+          option(value="100k-500k") b.100k-500k
+          option(value="500k-1mil") c.500k-1mil
+          option(value="1mil-3mil") d.1mil-3mil
+          option(value="3mil+") e.3mil+
+      h3.apply Brief Explanation of service & team
+      label 500 words max in English
+      textarea.form-control
+      label Under 3M bytes
+      input.upload-file(type="file" required)
+
+      h3.apply Contact Point
+      .form-group
+        label Name
+        input.form-control(type="text" required)
+      .form-group
+        label Email
+        input.form-control(type="email" required)
+
+      p.evt-desc
+        | After submission, you can make another submission for changes.
+        br
+        | We will contact you soon after review.
+
+
+      button.btn-apply.btn-submit(type="submit" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Submit
+  //footer include
+  - var bgcolor = "#e8d807";
+  include ./footer.pug
+
+block script
+  script(src="/js/jquery.nicefileinput.min.js")
+  script(type="text/javascript").
+    $(function() {
+      $("input[type=file]").nicefileinput({label: "+ Add Pitch file"});
+    });
+
