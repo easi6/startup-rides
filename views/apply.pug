@@ -3,7 +3,7 @@ block content
   .banner.apply
     h1.title-img Apply now
   div(style="margin-top: 80px;")
-    form(action="http://submit.easi-way.com/submit/rides" method="POST" enctype="multipart/form-data")
+    form(action="http://submit.easi-way.com/submit/rides" method="POST" enctype="multipart/form-data" onsubmit="return validate()")
       p.evt-desc
         | Startup Rides is an event for startups and investors. In order to make a best match ride, we need to understand what you have been doing. Please share about your team and work.
       h3.apply About Service
@@ -60,4 +60,12 @@ block content
   include ./footer.pug
 block script
   script(src="/js/jquery.nicefileinput.min.js")
+  script(type="text/javascript").
+    function validate() {
+      if ($(".upload-file")[0].files[0].size > 3*1024*1024) {
+        alert("Upload file size maximum exceeds (3MB)");
+        return false;
+      }
+      return true;
+    }
 
