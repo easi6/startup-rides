@@ -5,7 +5,7 @@ block content
   div(style="margin-top: 80px;")
     form(action="http://submit.easi-way.com/submit/rides" method="POST" enctype="multipart/form-data" onsubmit="return validate()" accept-charset="utf-8")
       p.evt-desc
-        | Startup Rides is an event for startups and investors. In order to make a best match ride, we need to understand what you have been doing. Please share about your team and work.
+        | Startup Rides aims to connect startups and investors. To help you meet the right investors, we need to understand what you have been doing. Please tell us about your team and work.
       h3.apply About Service
       .form-group
         label Service Name
@@ -34,7 +34,7 @@ block content
           option(value="1mil-3mil") d. 1mil-3mil
           option(value="3mil+") e. 3mil+
       h3.apply Brief Explanation of Service & Team
-      label 500 words max in English
+      label 500 words max. in English
       textarea.form-control(name="explain[text]")
       label Under 3M bytes
         span.required *
@@ -51,8 +51,7 @@ block content
         input.form-control(type="email" name="contact[email]" required)
 
       p.evt-desc
-        | Ready to submit? Please double check your contact information. We will send you a result to the email that you provided. Thank you.
-
+        | Ready to submit? Please double check your contact information. We will send you the result to the provided email address. Thank you.
 
       button.btn-apply.btn-submit(type="submit" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Submit
   //footer include
