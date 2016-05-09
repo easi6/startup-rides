@@ -62,7 +62,7 @@ block script
   script(src="/js/jquery.nicefileinput.min.js")
   script(type="text/javascript").
     function validate() {
-      if ($(".upload-file")[0].files[0].size > 3*1024*1024) {
+      if ($(".upload-file")[1].files[0].size > 3*1024*1024) {
         alert("Upload file size maximum exceeds (3MB)");
         return false;
       }
