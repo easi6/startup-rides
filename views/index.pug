@@ -112,14 +112,15 @@ block content
     a.btn-apply(href="/apply.html" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Apply Now
 
     h3#hosts Hosts
-    p.evt-desc Startup Rides is proudly hosted by Easiway and IBM Softlayer.
+    p.evt-desc Startup Rides is proudly hosted by
+      br
+      | Easiway, IBM Softlayer and StartUpsHK.
 
     // hosts logo part
-    .hosts.row
-      .col-md-6.col-sm-6.col-xs-12
-        a.host-logo.easiway(href="http://geteasiway.com" target="_blank") easiway
-      .col-md-6.col-sm-6.col-xs-12
-        a.host-logo.softlayer(href="http://www.softlayer.com/" target="_blank") Softlayer
+    .hosts.clearfix
+      a.host-logo.easiway(href="http://geteasiway.com" target="_blank") easiway
+      a.host-logo.softlayer(href="http://www.softlayer.com/" target="_blank") Softlayer
+      a.host-logo.startupshk(href="http://www.startupshk.com/" target="_blank") StartUpsHK
 
   //footer include
   - var bgcolor = "#1ed977";

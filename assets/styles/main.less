@@ -115,19 +115,37 @@ h3 { /* need to be removed using customized bootstrap */
 }
 
 a.host-logo {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   &.easiway {
-    .img-retina("/img/easiway-logo.png";"/img/easiway-logo@2x.png";213px;52px);
+    @w: 218px;
+    @h: 120px;
+    .img-retina("/img/img-easiway-logo.png";"/img/img-easiway-logo@2x.png";@w;@h);
     background-repeat: no-repeat;
-    .size(213px; 52px);
+    .size(@w; @h);
+    margin-right: 78px;
   }
   &.softlayer {
-    .img-retina("/img/softlayer-logo.png";"/img/softlayer-logo.png";213px;36px);
+    @w: 120px;
+    .img-retina("/img/img-ibm-logo.png";"/img/img-ibm-logo@2x.png";@w; @w);
     background-repeat: no-repeat;
-    .size(213px; 36px);
+    .square(@w);
+    margin-right: 78px;
+  }
+  &.startupshk {
+    @w: 134px;
+    @h: 120px;
+    .img-retina("/img/img-startupshk-logo.png"; "/img/img-startupshk-logo@2x.png"; @w; @h);
+    background-repeat: no-repeat;
+    .size(@w; @h);
   }
   .hide-text();
+  @media (max-width: 700px) {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 15px;
+  }
 }
 
 
@@ -307,10 +325,10 @@ footer {
   margin-bottom: 100px;
   .center-block();
   max-width: 684px; 
-
-  .col-md-6 {
+  .col-md-4 {
     margin-bottom: 30px;
   }
+  text-align: center;
 }
 
 .download-links {
