@@ -19,7 +19,8 @@ block banner
             li.active
               a(href="#schedules") Event Schedule
             li
-              a(href="/apply.html") Apply
+              //- a(href="/apply.html") Apply
+              a(href="#apply") Apply
             li
               a(href="#hosts") Hosts
 block content
@@ -32,17 +33,17 @@ block content
     .panel.panel-info
       .panel-heading
         .phase Application Due by
-        .date May 10 (Tues.) - 25 (Wed.)
+        .date May 10 Tues - 25 Wed
 
     .panel.panel-info
       .panel-heading
         .phase Selected Startups Announced on
-        .date May 27 (Fri.)
+        .date May 27 Fri
 
     .panel.panel-info
       .panel-heading
         .phase Book a ride on
-        .date May 30 (Mon.)
+        .date May 30 Mon
       .panel-body
         .easiway-app-icon
         ul.list-unstyled
@@ -107,7 +108,7 @@ block content
                 br
                 | Venture company
 
-    h3 Qualification
+    h3#apply Qualification
     p.evt-desc We are looking for startups with passion and positive energy. So apply now!
 
     a.btn-apply(href="/apply.html" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Apply Now
