@@ -1,28 +1,31 @@
 extends ./layout.pug
-block content
+block banner
   .banner
-    h1.title-img STARTUP RIDES
-    a.btn-apply(href="/apply.html").btn.btn-primary.btn-lg Apply Now
+    .container
+      h1.title-img STARTUP RIDES
+      a.btn-apply(href="/apply.html").btn.btn-primary.btn-lg Apply Now
   div
-    nav#main-nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
+    .nav-container
+      nav#main-nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
 
-        .collapse.navbar-collapse#bs-example-navbar-collapse-1
-          ul.nav.nav-justified
-            li.active
-              a(href="#schedules") Event Schedule
-            li
-              a(href="/apply.html") Apply
-            li
-              a(href="#hosts") Hosts
-
-
+          .collapse.navbar-collapse#bs-example-navbar-collapse-1
+            ul.nav.nav-justified
+              li
+                a(href="#schedules") Event Schedule
+              li
+                //- a(href="/apply.html") Apply
+                a(href="#apply") Apply
+              li
+                a(href="#hosts") Hosts
+block content
+  div
     .halo
       h2.halo-title Speed date with VCs on a Tesla ride
     p.evt-desc Startup Rides is hosted by Easiway, IBM Softlayer and supported by Rise Conference. This event is specially designed to help startups meet with the right investors privately. To make the meeting friendlier, we have prepared Tesla rides as a meeting place with investors. If you want to ride with investors around Hong Kong city, please submit your application right now!
@@ -31,17 +34,17 @@ block content
     .panel.panel-info
       .panel-heading
         .phase Application Due by
-        .date May 10 (Tues.) - 25 (Wed.)
+        .date May 10 Tues - 25 Wed
 
     .panel.panel-info
       .panel-heading
         .phase Selected Startups Announced on
-        .date May 27 (Fri.)
+        .date May 27 Fri
 
     .panel.panel-info
       .panel-heading
         .phase Book a ride on
-        .date May 30 (Mon.)
+        .date May 30  Mon
       .panel-body
         .easiway-app-icon
         ul.list-unstyled
@@ -59,7 +62,7 @@ block content
     .panel.panel-info
       .panel-heading
         .phase Meeting with VCs
-        .date June 1 (Wed.), 6:00-8:00 P.M.
+        .date June 1 Wed, 6:00-8:00 P.M.
       .panel-body
         .bg-wrapper
           img.img-responsive(src="/img/img-hongkong@2x.png")
@@ -67,10 +70,12 @@ block content
           dt Pick up point A &raquo;
           dd
             .desc Convention & Exhibition Center
+              a(href="https://goo.gl/maps/9ggrir9PKKD2" target="_blank").icn-loc
             .desc-sub 1 Expo Dr, Wan Chai, Hong Kong
           dt Pick up point B &raquo;
           dd
             .desc IFC Mall
+              a(href="https://goo.gl/maps/zBYAx1dRqYr" target="_blank").icn-loc
             .desc-sub 8 Finance Street, Central, Hong Kong
           dt Meeting time &raquo;
           dd.desc 20~30-min. Easiway trips with VCs
@@ -106,7 +111,7 @@ block content
                 br
                 | Venture company
 
-    h3 Qualification
+    h3#apply Qualification
     p.evt-desc We are looking for startups with passion and positive energy. So apply now!
 
     a.btn-apply(href="/apply.html" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Apply Now
@@ -123,5 +128,6 @@ block content
       a.host-logo.startupshk(href="http://www.startupshk.com/" target="_blank") StartUpsHK
 
   //footer include
+block footer
   - var bgcolor = "#1ed977";
   include ./footer.pug

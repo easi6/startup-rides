@@ -1,7 +1,10 @@
 extends ./layout.pug
-block content
+block banner
   .banner.apply
-    h1.title-img Apply now
+    .container
+      h1.title-img Apply now
+      a.btn-close(href="/")
+block content
   div(style="margin-top: 80px;")
     form(action="http://submit.easi-way.com/submit/rides" method="POST" enctype="multipart/form-data" onsubmit="return validate()" accept-charset="utf-8")
       p.evt-desc
@@ -55,6 +58,7 @@ block content
 
       button.btn-apply.btn-submit(type="submit" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Submit
   //footer include
+block footer
   - var bgcolor = "#e8d807";
   include ./footer.pug
 block script
@@ -67,4 +71,3 @@ block script
       }
       return true;
     }
-

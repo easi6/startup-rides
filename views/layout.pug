@@ -4,7 +4,7 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="renderer" content="webkit")
     title Startup Rides @ HK
-    link(href='https://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,900,300,100' rel='stylesheet' type='text/css')
     // build:css:dist /bootstrap/css/bootstrap.min.css
     link(rel="stylesheet" href="/bootstrap/css/bootstrap.css")
     // /build
@@ -14,9 +14,11 @@ html(lang="en")
     link(rel="stylesheet" href="/css/apply.css")
     // /build
     block header
-  body
+  body(data-spy="scroll" data-target="#main-nav")
+    block banner
     .container
       block content
+    block footer
     script(src="/bower/jquery/dist/jquery.min.js")
     script(src="/bootstrap/js/bootstrap.min.js")
     block script

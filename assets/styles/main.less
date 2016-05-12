@@ -16,7 +16,9 @@
 }
 
 body {
+  position: relative;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   color: #555;
 }
 
@@ -57,6 +59,7 @@ body {
 .btn-apply {
   text-transform: uppercase;
   margin-top: 26px;
+  letter-spacing: 1px;
   &.btn-block {
     @h: 123px;
     height: @h;
@@ -67,9 +70,54 @@ body {
   }
 }
 
+.btn-close{
+  position:absolute;
+  top:72px;
+  right:48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid #797320;
+  &::after, &::before{
+    content:'';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background-color: #797320;
+    top:50%;left:50%;
+    border-radius: 1px;
+    transform-origin: center;
+  }
+  &::before{
+    transform: translate(-50%,-50%) rotate(-45deg);
+    -webkit-transform: translate(-50%,-50%) rotate(-45deg);
+    -ms-transform: translate(-50%,-50%) rotate(-45deg);
+  }
+  &::after{
+    transform: translate(-50%,-50%) rotate(45deg);
+    -webkit-transform: translate(-50%,-50%) rotate(45deg);
+    -ms-transform: translate(-50%,-50%) rotate(45deg);
+  }
+}
+
+.nav-container{
+  position: relative;
+  height: 70px;
+}
+
 #main-nav {
+  position: absolute;
+  top:0;
+  width:100%;
+  z-index: 1000;
   ul.nav li {
     text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    &.active a{
+      color: #057528;
+    }
   }
   border: none;
 
@@ -171,6 +219,7 @@ footer {
 
 @panel-gap: 60px;
 .panel-info {
+  border: none;
   .desc {
     font-size: @text-size;
   }
@@ -193,22 +242,34 @@ footer {
     text-align: center;
     .phase {
       font-size: @text-size;
+      font-weight: 300;
     }
     .date {
       font-size: 40px;
-      font-weight: 300;
+      font-weight: 100;
     }
   }
   margin-bottom: @panel-gap;
 
   dt {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 22px;
     width: 180px;
   }
   dd {
     margin-left: 200px;
     margin-bottom: 30px;
+  }
+
+  .icn-loc{
+    position: relative;
+    display:inline-block;
+    margin: 0 10px;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background: url("/img/icn-location.svg");
+    background-size: 100%;
   }
 
   ul {
@@ -324,7 +385,7 @@ footer {
   margin-top: 50px;
   margin-bottom: 100px;
   .center-block();
-  max-width: 684px; 
+  max-width: 684px;
   .col-md-4 {
     margin-bottom: 30px;
   }
