@@ -42,7 +42,7 @@ body {
       .title-img(374px; 142px; "img-apply-now.svg");
     }
   }
-  background-size: cover;
+  background-size: 101%;
   background-repeat: no-repeat;
   background-position: center;
   .size(100%; 371px);
@@ -58,6 +58,7 @@ body {
 .btn-apply {
   text-transform: uppercase;
   margin-top: 26px;
+  letter-spacing: 1px;
   &.btn-block {
     @h: 123px;
     height: @h;
@@ -69,9 +70,11 @@ body {
 }
 
 #main-nav {
-  font-weight: 400;
   ul.nav li {
     text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 400;
   }
   border: none;
 
