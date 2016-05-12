@@ -5,24 +5,25 @@ block banner
       h1.title-img STARTUP RIDES
       a.btn-apply(href="/apply.html").btn.btn-primary.btn-lg Apply Now
   div
-    nav#main-nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
+    .nav-container
+      nav#main-nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
 
-        .collapse.navbar-collapse#bs-example-navbar-collapse-1
-          ul.nav.nav-justified
-            li.active
-              a(href="#schedules") Event Schedule
-            li
-              //- a(href="/apply.html") Apply
-              a(href="#apply") Apply
-            li
-              a(href="#hosts") Hosts
+          .collapse.navbar-collapse#bs-example-navbar-collapse-1
+            ul.nav.nav-justified
+              li.active
+                a(href="#schedules") Event Schedule
+              li
+                //- a(href="/apply.html") Apply
+                a(href="#apply") Apply
+              li
+                a(href="#hosts") Hosts
 block content
   div
     .halo
