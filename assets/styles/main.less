@@ -42,7 +42,7 @@ body {
       .title-img(374px; 142px; "img-apply-now.svg");
     }
   }
-  background-size: 101%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   .size(100%; 371px);
@@ -66,6 +66,36 @@ body {
     line-height: @h - 12px;
     margin-top: 50px;
     margin-bottom: 100px;
+  }
+}
+
+.btn-close{
+  position:absolute;
+  top:26px;
+  right:26px;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid #797320;
+  &::after, &::before{
+    content:'';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background-color: #797320;
+    top:50%;left:50%;
+    border-radius: 1px;
+    transform-origin: center;
+  }
+  &::before{
+    transform:
+      translate(-50%,-50%)
+      rotate(-45deg);
+  }
+  &::after{
+    transform:
+      translate(-50%,-50%)
+      rotate(45deg);
   }
 }
 
