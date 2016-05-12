@@ -1,8 +1,9 @@
 extends ./layout.pug
-block content
+block banner
   .banner
-    h1.title-img STARTUP RIDES
-    a.btn-apply(href="/apply.html").btn.btn-primary.btn-lg Apply Now
+    .container
+      h1.title-img STARTUP RIDES
+      a.btn-apply(href="/apply.html").btn.btn-primary.btn-lg Apply Now
   div
     nav#main-nav.navbar.navbar-default
       .container-fluid
@@ -21,8 +22,8 @@ block content
               a(href="/apply.html") Apply
             li
               a(href="#hosts") Hosts
-
-
+block content
+  div
     .halo
       h2.halo-title Speed date with VCs on a Tesla ride
     p.evt-desc Startup Rides is hosted by Easiway, IBM Softlayer and supported by Rise Conference. This event is specially designed to help startups meet with the right investors privately. To make the meeting friendlier, we have prepared Tesla rides as a meeting place with investors. If you want to ride with investors around Hong Kong city, please submit your application right now!
