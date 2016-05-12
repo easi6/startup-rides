@@ -19,5 +19,4 @@ $(window).scroll(function(){
   } else {
     $('nav').css(non_sticky_css);
   }
-
 });
