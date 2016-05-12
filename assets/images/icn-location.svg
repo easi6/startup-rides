@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>icn_location</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="start-up-rides-2" transform="translate(-762.000000, -2800.000000)" fill="#1DD977">
+            <g id="icn_location" transform="translate(762.000000, 2800.000000)">
+                <path d="M12.5,0 C7.26215413,0 3,4.55107307 3,10.1453836 C3,15.5055699 10.9886926,22.9341054 11.8995362,23.7628548 C12.0727945,23.9209516 12.2866448,24 12.5,24 C12.7133552,24 12.9286905,23.9209516 13.1009588,23.7628548 C14.0132875,22.9341054 22,15.5055699 22,10.1453836 C22,4.55107307 17.7378459,0 12.5,0 L12.5,0 Z M12.5,16.644471 C8.71603877,16.644471 5.63451618,13.5122412 5.63451618,9.66152684 C5.63451618,5.8118195 8.71603877,2.67908616 12.5,2.67908616 C16.2869314,2.67908616 19.3654838,5.8118195 19.3654838,9.66152684 C19.3654838,13.5122412 16.2869314,16.644471 12.5,16.644471 L12.5,16.644471 Z" id="Fill-2-Copy-5"></path>
+            </g>
+        </g>
+    </g>
+</svg>
