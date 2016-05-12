@@ -85,6 +85,12 @@ module.exports = (grunt) ->
         tasks: 'pug'
         options:
           livereload: false
+      favicon:
+        files:
+          ['assets/favicon']
+        tasks: 'copy:favicon'
+        options:
+          livereload: false
       img:
         files:
           ['assets/images/**/*']
@@ -145,7 +151,13 @@ module.exports = (grunt) ->
           cwd: 'assets/bootstrap'
           dest: '<%= process.env.BASE %>/bootstrap/'
         ]
-
+      favicon:
+        files: [
+          expand: true
+          src: ["favicon.ico"]
+          cwd: 'assets/favicon'
+          dest: '<%= process.env.BASE %>'
+        ]
       img:
         files: [
             expand: true
