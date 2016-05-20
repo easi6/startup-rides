@@ -112,17 +112,23 @@ body {
   z-index: 1000;
   ul.nav li {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 400;
-    &.active a{
+    a{
       color: #057528;
+      &:hover, &:focus {
+        color: #ffffff; //#057528;
+      }
+    }
+    &.active a{
+      color: #ffffff; //#057528;
     }
   }
   border: none;
 
   a:hover, a:focus {
-    color: #057528;
+    color: #ffffff; //#057528;
   }
 }
 
