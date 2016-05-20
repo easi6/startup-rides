@@ -20,7 +20,8 @@ block banner
               li
                 a(href="#schedules") Event Schedule
               li
-                //- a(href="/apply.html") Apply
+                a(href="#vc-list") Venture Capitals
+              li
                 a(href="#apply") Apply
               li
                 a(href="#hosts") Hosts
@@ -85,36 +86,34 @@ block content
           dt Meeting time &raquo;
           dd.desc 20~30-min. Easiway trips with VCs
 
-    //-
-      #vc-wrapper
-        .gray-overlay
-          p Will Be Announced Soon
-        h3(style="margin-top: 0px;margin-bottom: 60px; padding-top: 50px;position: relative") Venture Capitals
-        .row#vc-list
-          .col-md-4.col-sm-12.col-xs-12
-            .vc-item
-              .photo-ph
-              .vc-name John Doe
-              .vc-title
-                | Vice president
-                br
-                | Venture company
-          .col-md-4.hidden-sm.hidden-xs.col-sm-12.col-xs-12
-            .vc-item
-              .photo-ph
-              .vc-name John Doe
-              .vc-title
-                | Vice president
-                br
-                | Venture company
-          .col-md-4.hidden-sm.hidden-xs.col-sm-12.col-xs-12
-            .vc-item
-              .photo-ph
-              .vc-name John Doe
-              .vc-title
-                | Vice president
-                br
-                | Venture company
+    #vc-wrapper
+      h3(style="margin-top: 0px;margin-bottom: 60px; padding-top: 50px;position: relative") Venture Capitals
+      .row#vc-list
+        .col-md-4.col-sm-6.col-xs-6
+          .vc-item
+            a(href="http://500.co/" target="_blank")
+              .photo-ph.st500
+            .vc-name 500startups
+        .col-md-4.col-sm-6.col-xs-6
+          .vc-item
+            a(href="http://www.gobivc.com/" target="_blank")
+              .photo-ph.gobi
+            .vc-name Gobi Partners
+        .col-md-4.col-sm-6.col-xs-6
+          .vc-item
+            a(href="https://sosv.com" target="_blank")
+              .photo-ph.sosv
+            .vc-name SOSV
+        .col-md-4.col-sm-6.col-xs-6
+          .vc-item
+            a(href="http://www.cherubicvc.com/" target="_blank")
+              .photo-ph.cherubic
+            .vc-name Cherubic Ventures
+        .col-md-4.col-sm-6.col-xs-6
+          .vc-item
+            a(href="http://appworks.tw/" target="_blank")
+              .photo-ph.appworks
+            .vc-name AppWorks Ventures
 
     h3#apply Qualification
     p.evt-desc We are looking for startups with passion and positive energy. So apply now!
