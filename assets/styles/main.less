@@ -22,6 +22,10 @@ body {
   color: #555;
 }
 
+a{
+  transition: all .2s ease;
+}
+
 .title-img(@w;@h;@imgname:"img-title.svg") {
   margin: 0;
   padding: 0;
@@ -112,17 +116,23 @@ body {
   z-index: 1000;
   ul.nav li {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 400;
-    &.active a{
+    a{
       color: #057528;
+      &:hover, &:focus {
+        color: #ffffff; //#057528;
+      }
+    }
+    &.active a{
+      color: #ffffff; //#057528;
     }
   }
   border: none;
 
   a:hover, a:focus {
-    color: #057528;
+    color: #ffffff; //#057528;
   }
 }
 
@@ -163,10 +173,17 @@ h3 { /* need to be removed using customized bootstrap */
 }
 
 a.host-logo {
+  position: relative;
   display: inline-block;
   margin: 0 auto;
+  top:0;
+
+  &:hover{
+    top: -5px;
+  }
+
   &.easiway {
-    @w: 218px;
+    @w: 120px;
     @h: 120px;
     .img-retina("/img/img-easiway-logo.png";"/img/img-easiway-logo@2x.png";@w;@h);
     background-repeat: no-repeat;
@@ -181,7 +198,7 @@ a.host-logo {
     margin-right: 78px;
   }
   &.startupshk {
-    @w: 134px;
+    @w: 120px;
     @h: 120px;
     .img-retina("/img/img-startupshk-logo.png"; "/img/img-startupshk-logo@2x.png"; @w; @h);
     background-repeat: no-repeat;
@@ -326,7 +343,7 @@ footer {
   width: 100%;
 }
 
-#vc-wrapper {
+#vc-list {
   margin-top: 35px;
   max-width: 684px;
   position: relative;
@@ -348,7 +365,7 @@ footer {
     text-align: center;
   }
 }
-#vc-list {
+#vc-wrapper {
   .vc-item {
     .vc-name {
       text-align: center;
@@ -365,7 +382,14 @@ footer {
       background-color: #d8d8d8;
       margin: 0 auto;
       margin-bottom: 20px;
+      top:0;
       .square(120px);
+      transition: top .3s ease;
+
+      //add hover state
+      &:hover{
+        top: -5px;
+      }
 
       &:before {
         left: -45px;
