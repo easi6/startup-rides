@@ -6,9 +6,15 @@ block banner
       a.btn-close(href="/")
 block content
   div(style="margin-top: 80px;")
+    p.evt-desc(style="font-size: 21px; max-width: 812px;")
+      | STARTUP RIDES 2017 is designed for travel and transportation startups to meet potential investors and partners on rides around Hong Kong City.
+      br
+      br
+      | Ten startups will be selected to get on the ride and connect at the  networking party.
+      br
+      br
+      | Five more will be chosen to join everybody at the party.
     form(action="http://submit.easi-way.com/submit/rides" method="POST" enctype="multipart/form-data" onsubmit="return validate()" accept-charset="utf-8")
-      p.evt-desc
-        | Startup Rides aims to connect startups and investors. To help you meet the right investors, we need to understand what you have been doing. Please tell us about your team and work.
       h3.apply About Service
       .form-group
         label Service Name
@@ -36,7 +42,10 @@ block content
           option(value="500k-1mil") c. 500k-1mil
           option(value="1mil-3mil") d. 1mil-3mil
           option(value="3mil+") e. 3mil+
-      h3.apply Brief Explanation of Service & Team
+      h3.apply
+        | Tell us about you and your team
+        div(style="font-size: 16px; color: #aeaeae; margin-top: 5px")
+          | *This description will be added in the media kit for this event.
       label 500 words max. in English
       textarea.form-control(name="explain[text]")
       label Under 3M bytes
@@ -52,9 +61,30 @@ block content
         label Email
           span.required *
         input.form-control(type="email" name="contact[email]" required)
+      .form-group
+        label Phone Number
+          span.required *
+        input.form-control(type="text" name="contact[phone]" required)
+      .form-group
+        label Whatsapp, WeChat, KakaoTalk, Line or other messengers
+          span.required *
+        input.form-control(type="text" name="contact[im]" required)
+      .form-group
+        label Memo
+        textarea.form-control(name="contact[memo]" style="min-height: 83px; height: 83px;")
+        p(style="font-size: 16px; line-height: 22px; color: #aeaeae")
+          | -Twitter, Facebook, Instagram, etc
+          br
+          | -Any dietary preferences? (Not guaranteed, but we will do you best to meet your request.)
 
       p.evt-desc
-        | Ready to submit? Please double check your contact information. We will send you the result to the provided email address. Thank you.
+        | *Only one participant from each company may join the Tesla rides.
+        br
+        | For the networking party, you may bring one more team member.
+      p.evt-desc(style="font-size: 36px; font-weight: bold; color: #555555; margin-top: 57px;")
+        | Thanks for applying!
+        br
+        | We will give out the results on July 7 Fri.
 
       button.btn-apply.btn-submit(type="submit" style="max-width: 684px;").center-block.btn.btn-block.btn-primary Submit
   //footer include
